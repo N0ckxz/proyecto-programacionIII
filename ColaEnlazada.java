@@ -1,4 +1,4 @@
-public class ColaEnlazada extends ListaEnlazada {
+public class ColaEnlazada<T> extends ListaEnlazada<T> {
     public void encolar(T dato) {
         agregar(dato);
     }

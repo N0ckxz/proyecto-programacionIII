@@ -1,4 +1,4 @@
-public abstract class ListaEnlazada {
+public abstract class ListaEnlazada<T> {
     Nodo cabeza;
 
     public ListaEnlazada() {
