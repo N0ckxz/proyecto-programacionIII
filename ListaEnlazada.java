@@ -1,4 +1,4 @@
-public abstract class ListaEnlazada<T> {
+public abstract class ListaEnlazada<T> { //Comentario
     Nodo cabeza;
 
     public ListaEnlazada() {

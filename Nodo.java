@@ -1,4 +1,4 @@
-public class Nodo<T> {
+public class Nodo<T> { //Comentario
     T dato;
     Nodo siguiente;
 
