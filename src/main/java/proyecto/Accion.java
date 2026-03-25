@@ -1,3 +1,5 @@
+package proyecto;
+
 public class Accion { //Clase accion
     enum TipoAccion { //Enum para limitar acciones posibles
         INSERTAR,
