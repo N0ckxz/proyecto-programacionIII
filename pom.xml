@@ -9,20 +9,24 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.release>17</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
+        <!-- Standard dependency (Install the JAR to your local repo using mvn install:install-file) -->
         <dependency>
             <groupId>com.murcia</groupId>
             <artifactId>mi-libreria</artifactId>
             <version>1.0.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/mi-libreria-1.0.0.jar</systemPath>
-            
-            </dependency>
-    </dependencies>
+        </dependency>
 
+        <!-- Standard testing library -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.10.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>
