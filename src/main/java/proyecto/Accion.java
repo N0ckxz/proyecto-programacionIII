@@ -1,3 +1,5 @@
+package proyecto;
+
 public class Accion { //Clase accion
     enum TipoAccion { //Enum para limitar acciones posibles
         INSERTAR,
@@ -13,4 +15,8 @@ public class Accion { //Clase accion
         this.numeroLinea = numeroLinea;
         this.texto = texto;
     }
+
+    public TipoAccion getTipo() {return tipo; } //getters
+    public int getNumeroLinea() {return numeroLinea; }
+    public String getTexto() {return texto; }
 }
