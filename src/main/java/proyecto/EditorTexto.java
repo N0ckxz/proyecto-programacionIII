@@ -12,7 +12,12 @@ public class EditorTexto {
     }
 
     public void escribir(int linea, String texto) { 
+        documentoActual.insertarLinea(linea, texto); //Insertar el texto en el documento en la linea especificada
 
+        pilaDeshacer.apilar(new Accion(Accion.TipoAccion.INSERTAR, linea, texto)); //Registramos la accion para poder deshacer
+        //Limpiar la pila de rehacer, ya que hay una nueva accion
+
+        pilaRehacer = new PilaEnlazada<Accion>(); //Reiniciamos para limpiar la pila
     }
 
     public void borrar(int linea) {
