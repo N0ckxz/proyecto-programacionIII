@@ -19,6 +19,8 @@
             <groupId>com.murcia</groupId>
             <artifactId>mi-libreria</artifactId>
             <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/mi-libreria-1.0.0.jar</systemPath>
         </dependency>
 
         <!-- Standard testing library -->
