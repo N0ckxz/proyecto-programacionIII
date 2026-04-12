@@ -1,8 +1,6 @@
 package proyecto;
 
-import com.murcia.utils.ListaEnlazada;
-import com.murcia.utils.Input;
-import com.murcia.utils.Menu;
+import com.murcia.utils.*;
 
 class ConcreteListaEnlazada<T> extends ListaEnlazada<T> { 
     
@@ -18,7 +16,10 @@ public class Main {
             "3. Deshacer",
             "4. Rehacer",
             "5. Ver documento",
-            "6. Salir"
+            "6. Guardar archivo",
+            "7. Cargar archivo",
+            "8. Estadísticas",
+            "9. Salir"
         };
 
         // Creamos el menú: 'V' para disposición vertical
@@ -34,24 +35,42 @@ public class Main {
                     Input.nextLine(""); 
                     String texto = Input.nextLine("Contenido de la línea: ");
                     editor.escribir(numL, texto);
+                    editor.mostrarEstadoActual();
                     break;
                 case '2':
                     int numB = Input.nextInt("Línea a borrar: ");
                     editor.borrar(numB);
+                    editor.mostrarEstadoActual();
                     break;
                 case '3':
                     editor.deshacer();
                     System.out.println(">> Acción deshecha.");
+                    editor.mostrarEstadoActual();
                     break;
                 case '4':
                     editor.rehacer();
                     System.out.println(">> Acción rehecha.");
+                    editor.mostrarEstadoActual();
                     break;
                 case '5':
                     editor.mostrarEstadoActual();
                     break;
+                case '6':
+                    Input.nextLine("");
+                    String nombreGuardar = Input.nextLine("Nombre del archivo a guardar: ");
+                    editor.guardarArchivo(nombreGuardar);
+                    break;
+                case '7':
+                    Input.nextLine("");
+                    String nombreCargar = Input.nextLine("Nombre del archivo a cargar: ");
+                    editor.cargarArchivo(nombreCargar);
+                    editor.mostrarEstadoActual();
+                    break;
+                case '8':
+                    editor.mostrarEstadisticas();
+                    break;
             }
-        } while (opcion != '6');
+        } while (opcion != '9');
         
         System.out.println("Editor cerrado.");
     }

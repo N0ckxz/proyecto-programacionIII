@@ -1,6 +1,7 @@
 package proyecto;
 
 import com.murcia.utils.*; //comentario para el commit de prueba
+import java.io.*;
 
 public class Documento{ //Comentario de prueba en casa
 
@@ -54,5 +55,48 @@ public class Documento{ //Comentario de prueba en casa
             }
         }
         System.out.println("-------------------------------\n");
+    }
+
+    public void guardarEnArchivo(String nombreArchivo) {
+        // Agregar extensión .txt si no la tiene
+        if (!nombreArchivo.endsWith(".txt")) {
+            nombreArchivo = nombreArchivo + ".txt";
+        }
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(nombreArchivo))) {
+            for (int i = 0; i < lineasDeTexto.size(); i++) {
+                writer.write(lineasDeTexto.get(i));
+                writer.newLine();
+            }
+            System.out.println("✓ Documento guardado en: " + nombreArchivo);
+        } catch (IOException e) {
+            System.out.println("✗ Error al guardar el archivo: " + e.getMessage());
+        }
+    }
+
+    public void cargarDesdeArchivo(String nombreArchivo) {
+        // Agregar extensión .txt si no la tiene
+        if (!nombreArchivo.endsWith(".txt")) {
+            nombreArchivo = nombreArchivo + ".txt";
+        }
+        lineasDeTexto.clear(); // Limpiar contenido actual
+        try (BufferedReader reader = new BufferedReader(new FileReader(nombreArchivo))) {
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                lineasDeTexto.addLast(linea);
+            }
+            System.out.println("✓ Documento cargado desde: " + nombreArchivo);
+        } catch (FileNotFoundException e) {
+            System.out.println("✗ Archivo no encontrado: " + nombreArchivo);
+        } catch (IOException e) {
+            System.out.println("✗ Error al cargar el archivo: " + e.getMessage());
+        }
+    }
+
+    public int obtenerTotalLineas() {
+        return lineasDeTexto.size();
+    }
+
+    public void limpiar() {
+        lineasDeTexto.clear();
     }
 }

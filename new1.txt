@@ -1,0 +1,5 @@
+1. https://www.tme.com/pe/es/news/library-articles/glossary/page/69840/nodo-electrico-definicion/
+2. https://www.inet.edu.ar/wp-content/uploads/2020/07/ELECTRONICA_Gu--a07-Mallas-y-Nodos.pdf
+3. https://es.khanacademy.org/science/physics/circuits-topic/circuits-resistance/v/ee-kirchhoffs-current-law
+4. https://es.khanacademy.org/science/physics/circuits-topic/circuits-resistance/v/ee-kirchhoffs-voltage-law
+Esta es una l�nea insertada por mi programa!
