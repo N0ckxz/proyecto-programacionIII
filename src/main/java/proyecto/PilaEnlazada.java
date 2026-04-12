@@ -1,6 +1,6 @@
 package proyecto;
 
-import com.murcia.utils.*; //Como funciona import vs package?
+import com.murcia.utils.*; 
 
 public class PilaEnlazada<T> extends ListaEnlazada<T> { 
     public PilaEnlazada() {
@@ -22,6 +22,6 @@ public class PilaEnlazada<T> extends ListaEnlazada<T> {
     }
 
     public T desapilar() {
-        return this.removeLast(); //Este metodo no está muy optimizado, peeeeero ya esta hecho
+        return this.removeLast(); 
     }
 }

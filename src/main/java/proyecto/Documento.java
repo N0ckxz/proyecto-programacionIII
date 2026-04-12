@@ -11,12 +11,23 @@ public class Documento{ //Comentario de prueba en casa
     }
 
     public void insertarLinea(int posicion, String texto) {
-        if (posicion < 1) { //La posicion es 1 para la entrada del usuario
-            lineasDeTexto.add(0, texto); //insertar al inicio
-        } else if (posicion > lineasDeTexto.size()) {
-            lineasDeTexto.add(texto); //insertar al final
+        int sizeActual = lineasDeTexto.size();
+        
+        if (posicion <= 0) {
+            // Posición inválida, ignorar
+            return;
+        } else if (posicion <= sizeActual) {
+            // Si la línea ya existe, reemplazar el contenido
+            lineasDeTexto.set(posicion - 1, texto);
+        } else if (posicion == sizeActual + 1) {
+            // Si es la siguiente línea, agregar al final
+            lineasDeTexto.addLast(texto);
         } else {
-            lineasDeTexto.add(posicion - 1, texto); //insertar en el índice 0 específicado
+            // Si está más allá, llenar con vacíos y luego insertar
+            while (lineasDeTexto.size() < posicion - 1) {
+                lineasDeTexto.addLast("");
+            }
+            lineasDeTexto.addLast(texto);
         }
     }
 
