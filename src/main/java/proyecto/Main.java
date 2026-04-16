@@ -22,7 +22,7 @@ public class Main {
             "9. Salir"
         };
 
-        // Creamos el menú: 'V' para disposición vertical
+        // Menu
         Menu menuPrincipal = new Menu(opciones, 'V', "\n", "\n--- SIMULADOR DE EDITOR DE TEXTO ---");
         char opcion;
 
